@@ -172,7 +172,7 @@ export default function Home() {
                             <ul className="space-y-2">
                                 <li>
                                     <Link
-                                        href="/home"
+                                        to="/home"
                                         className="text-gray-400 hover:text-white"
                                     >
                                         Accueil
@@ -180,7 +180,7 @@ export default function Home() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="/about"
+                                        to="/about"
                                         className="text-gray-400 hover:text-white"
                                     >
                                         À propos
@@ -188,7 +188,7 @@ export default function Home() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="/team"
+                                        to="/team"
                                         className="text-gray-400 hover:text-white"
                                     >
                                         Equipe
@@ -196,7 +196,7 @@ export default function Home() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="/contact"
+                                        to="/contact"
                                         className="text-gray-400 hover:text-white"
                                     >
                                         Contact
@@ -211,7 +211,7 @@ export default function Home() {
                             <ul className="flex space-x-4">
                                 <li>
                                     <Link
-                                        href="#"
+                                        to="#"
                                         className="text-gray-400 hover:text-white"
                                     >
                                         <i className="bi bi-facebook"></i>
@@ -219,7 +219,7 @@ export default function Home() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="#"
+                                        to="#"
                                         className="text-gray-400 hover:text-white"
                                     >
                                         <i className="bi bi-twitter"></i>
@@ -227,7 +227,7 @@ export default function Home() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="#"
+                                        to="#"
                                         className="text-gray-400 hover:text-white"
                                     >
                                         <i className="bi bi-instagram"></i>
@@ -235,7 +235,7 @@ export default function Home() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="#"
+                                        to="#"
                                         className="text-gray-400 hover:text-white"
                                     >
                                         <i className="bi bi-linkedin"></i>
