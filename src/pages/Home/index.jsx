@@ -27,7 +27,6 @@ const people = [
         imageUrl: PPManel,
         linkedin: 'https://www.linkedin.com/in/manel-d-435527261/',
     },
-    // More people...
 ]
 export default function Home() {
     return (
@@ -92,7 +91,7 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <div className="mx-auto mb-40 mt-10 py-20">
+            <div className="mx-auto mt-10 py-20">
                 <div className="text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900">
                         Rencontrez notre équipe
@@ -143,6 +142,145 @@ export default function Home() {
                     </ul>
                 </div>
             </div>
+            <footer className="bg-black py-10">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                        <div className="text-white">
+                            <h3 className="mb-4 text-lg font-semibold">
+                                Informations
+                            </h3>
+                            <p className="text-gray-400">
+                                7 Rue Maurice Grandcoing
+                            </p>
+                            <p className="mb-3 text-gray-400">
+                                94200 Ivry-sur-Seine
+                            </p>
+                            <p className="mb-3 text-gray-400">
+                                Téléphone : 07 52 70 17 42
+                            </p>
+                            <Link
+                                to="mailto:contact@eatheria.com"
+                                className="text-gray-400"
+                            >
+                                Email: contact@aetheria.com
+                            </Link>
+                        </div>
+                        <div className="text-white">
+                            <h3 className="mb-4 text-lg font-semibold">
+                                Liens rapides
+                            </h3>
+                            <ul className="space-y-2">
+                                <li>
+                                    <Link
+                                        href="/home"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        Accueil
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/about"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        À propos
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/team"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        Equipe
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/contact"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        Contact
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="text-white">
+                            <h3 className="mb-4 text-lg font-semibold">
+                                Réseaux sociaux
+                            </h3>
+                            <ul className="flex space-x-4">
+                                <li>
+                                    <Link
+                                        href="#"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        <i className="bi bi-facebook"></i>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="#"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        <i className="bi bi-twitter"></i>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="#"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        <i className="bi bi-instagram"></i>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="#"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        <i className="bi bi-linkedin"></i>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                                S'inscrire à la newsletter
+                            </h2>
+                            <p class="mt-4 text-lg leading-8 text-gray-300">
+                                Recevez les dernières nouvelles de notre
+                                entreprise directement dans votre boîte de
+                                réception.
+                            </p>
+                            <div class="mt-6 flex gap-x-4">
+                                <label for="email-address" class="sr-only">
+                                    Adresse e-mail
+                                </label>
+                                <input
+                                    id="email-address"
+                                    name="email"
+                                    type="email"
+                                    autocomplete="email"
+                                    required
+                                    class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
+                                    placeholder="Entrez votre adresse e-mail"
+                                />
+                                <button
+                                    type="submit"
+                                    class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm"
+                                >
+                                    S'inscrire
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-8 text-center">
+                        <p className="text-gray-400">
+                            © 2024 Aetheria. Tous droits réservés.
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </>
     )
 }

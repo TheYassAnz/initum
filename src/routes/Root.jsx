@@ -29,7 +29,7 @@ const Root = () => {
                     </div>
                 </nav>
             </header>
-            <main className="mx-5 px-3">
+            <main>
                 <Outlet />
             </main>
         </>
