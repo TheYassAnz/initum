@@ -5,17 +5,24 @@ import LogoDjango from '../../assets/logo_django.png'
 import LogoNode from '../../assets/logo_node.png'
 import LogoDocker from '../../assets/logo_docker.png'
 import PPAbubakar from '../../assets/pp_abubakar.png'
+import PPYassine from '../../assets/pp_yassine.png'
+import PPManel from '../../assets/pp_manel.png'
 
 const people = [
     {
         name: 'Yassine ANZAR BASHA',
-        role: 'CEO & Developer',
-        imageUrl: PPAbubakar,
+        role: 'CEO & Full-Stack Developer',
+        imageUrl: PPYassine,
     },
     {
         name: 'Abubakar ALIEV',
         role: 'CTO & Back-End Developer',
         imageUrl: PPAbubakar,
+    },
+    {
+        name: 'Manel DJEDIR',
+        role: 'Scrum Master & UX Designer',
+        imageUrl: PPManel,
     },
     // More people...
 ]
@@ -33,16 +40,16 @@ export default function Home() {
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <Link
-                            to="#"
+                            to="/contact"
                             className="rounded-full bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                         >
-                            Get started
+                            Contactez-nous
                         </Link>
                         <Link
-                            to="/contact"
+                            to="/about"
                             className="text-sm font-semibold leading-6 text-gray-900"
                         >
-                            About us <span aria-hidden="true">→</span>
+                            À propos <span aria-hidden="true">→</span>
                         </Link>
                     </div>
                 </div>
@@ -82,14 +89,14 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <div className="mx-auto mt-10 py-20">
+            <div className="mx-auto mb-40 mt-10 py-20">
                 <div className="text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-                        Meet our leadership
+                        Rencontrez notre équipe
                     </h2>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Libero fames augue nisl porttitor nisi, quis. Id ac elit
-                        odio vitae elementum enim vitae ullamcorper suspendisse.
+                        Nous sommes une équipe de passionnés qui mettons tout en
+                        oeuvre pour vous satisfaire.
                     </p>
                 </div>
                 <div className="mt-10 flex justify-center">

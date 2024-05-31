@@ -15,7 +15,7 @@ const Root = () => {
                             to="/contact"
                             className="inline-flex rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800"
                         >
-                            Contact Us
+                            Obtenir un devis
                         </Link>
                         <button className="group -m-2.5 rounded-full p-2.5 transition hover:bg-neutral-950/10">
                             <svg
