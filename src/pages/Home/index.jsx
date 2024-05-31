@@ -62,28 +62,28 @@ export default function Home() {
                     <img
                         className="col-span-2 max-h-12 w-full object-contain invert filter lg:col-span-1"
                         src={LogoReact}
-                        alt="Transistor"
+                        alt="React"
                         width={158}
                         height={48}
                     />
                     <img
                         className="col-span-2 max-h-12 w-full object-contain invert filter lg:col-span-1"
                         src={LogoDjango}
-                        alt="Reform"
+                        alt="Django"
                         width={158}
                         height={48}
                     />
                     <img
                         className="col-span-2 max-h-12 w-full object-contain invert filter lg:col-span-1"
                         src={LogoNode}
-                        alt="Tuple"
+                        alt="Node"
                         width={158}
                         height={48}
                     />
                     <img
                         className="col-span-2 max-h-12 w-full object-contain invert filter lg:col-span-1"
                         src={LogoDocker}
-                        alt="Statamic"
+                        alt="Docker"
                         width={158}
                         height={48}
                     />
