@@ -11,18 +11,21 @@ import PPManel from '../../assets/pp_manel.png'
 const people = [
     {
         name: 'Yassine ANZAR BASHA',
-        role: 'CEO & Full-Stack Developer',
+        role: 'Fondateur & Développeur Full Stack',
         imageUrl: PPYassine,
+        linkedin: 'https://linkedin.com/in/yanzarbasha',
     },
     {
         name: 'Abubakar ALIEV',
-        role: 'CTO & Back-End Developer',
+        role: 'Co-Foundateur & Développeur Back-End',
         imageUrl: PPAbubakar,
+        linkedin: 'https://www.linkedin.com/in/abubakar-aliev-49ab02133',
     },
     {
         name: 'Manel DJEDIR',
-        role: 'Scrum Master & UX Designer',
+        role: 'Scrum Master & Développeur UX/UI',
         imageUrl: PPManel,
+        linkedin: 'https://www.linkedin.com/in/manel-d-435527261/',
     },
     // More people...
 ]
@@ -115,6 +118,23 @@ export default function Home() {
                                         </h3>
                                         <p className="text-sm font-semibold leading-6 text-gray-600">
                                             {person.role}
+                                        </p>
+                                        <p>
+                                            <Link
+                                                to="/team"
+                                                className="text-sm font-semibold leading-6 text-gray-900"
+                                            >
+                                                En savoir plus{' '}
+                                                <span aria-hidden="true">
+                                                    →
+                                                </span>
+                                            </Link>
+                                        </p>
+                                        <p class="mt-2 flex">
+                                            <Link
+                                                to={person.linkedin}
+                                                className="bi bi-linkedin text-xl"
+                                            ></Link>
                                         </p>
                                     </div>
                                 </div>
