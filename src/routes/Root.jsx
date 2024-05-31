@@ -6,11 +6,8 @@ const Root = () => {
             <header className="mx-5 mt-5">
                 <nav className="flex items-center justify-between rounded-full px-10 py-5 text-black">
                     <div>
-                        <Link
-                            to="/home"
-                            className="text-2xl font-bold uppercase"
-                        >
-                            <span className="font-normal">Anz</span>liev
+                        <Link to="/home" className="text-2xl font-bold">
+                            <span className="font-normal">Ae</span>theria.
                         </Link>
                     </div>
                     <div className="flex items-center gap-x-8">
