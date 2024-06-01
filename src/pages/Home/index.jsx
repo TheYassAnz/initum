@@ -21,12 +21,6 @@ const people = [
         imageUrl: PPAbubakar,
         linkedin: 'https://www.linkedin.com/in/abubakar-aliev-49ab02133',
     },
-    {
-        name: 'Manel DJEDIR',
-        role: 'Scrum Master & Développeur UX/UI',
-        imageUrl: PPManel,
-        linkedin: 'https://www.linkedin.com/in/manel-d-435527261/',
-    },
 ]
 export default function Home() {
     return (
