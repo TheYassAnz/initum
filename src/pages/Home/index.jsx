@@ -215,15 +215,22 @@ export default function Home() {
                             <p className="mb-3 text-gray-400">
                                 94200 Ivry-sur-Seine
                             </p>
-                            <p className="mb-3 text-gray-400">
-                                Téléphone : 07 52 70 17 42
+                            <p>
+                                <Link
+                                    className="text-gray-400 hover:underline"
+                                    to="tel:0752701742"
+                                >
+                                    07 52 70 17 42
+                                </Link>
                             </p>
-                            <Link
-                                to="mailto:contact@eatheria.com"
-                                className="text-gray-400"
-                            >
-                                Email: contact@aetheria.com
-                            </Link>
+                            <p>
+                                <Link
+                                    to="mailto:contact@eatheria.com"
+                                    className="text-gray-400 hover:underline"
+                                >
+                                    contact@aetheria.com
+                                </Link>
+                            </p>
                         </div>
                         <div className="text-white">
                             <h3 className="mb-4 text-lg font-semibold">
@@ -240,14 +247,6 @@ export default function Home() {
                                 </li>
                                 <li>
                                     <Link
-                                        to="/about"
-                                        className="text-gray-400 hover:text-white"
-                                    >
-                                        À propos
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
                                         to="/team"
                                         className="text-gray-400 hover:text-white"
                                     >
@@ -260,6 +259,14 @@ export default function Home() {
                                         className="text-gray-400 hover:text-white"
                                     >
                                         Contact
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        to="/about"
+                                        className="text-gray-400 hover:text-white"
+                                    >
+                                        À propos
                                     </Link>
                                 </li>
                             </ul>
