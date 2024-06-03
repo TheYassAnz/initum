@@ -7,6 +7,39 @@ import LogoDocker from '../../assets/logo_docker.png'
 import PPAbubakar from '../../assets/pp_abubakar.png'
 import PPYassine from '../../assets/pp_yassine.png'
 import PPManel from '../../assets/pp_manel.png'
+import {
+    GlobeAltIcon,
+    ShoppingCartIcon,
+    CursorArrowRaysIcon,
+    DevicePhoneMobileIcon,
+} from '@heroicons/react/24/outline'
+
+const features = [
+    {
+        name: 'Site web de presentation',
+        description:
+            'Obtenez votre site web de presentation simple pour booster votre image sur le web.',
+        icon: GlobeAltIcon,
+    },
+    {
+        name: 'Application web interactive',
+        description:
+            'Obtenez une application web interactive pour vos clients et vos employés.',
+        icon: CursorArrowRaysIcon,
+    },
+    {
+        name: 'Site e-commerce sécurisé',
+        description:
+            'Obtenez votre site e-commerce sécurisé pour vendre vos produits en ligne.',
+        icon: ShoppingCartIcon,
+    },
+    {
+        name: 'Application mobile',
+        description:
+            'Obtenez votre application mobile pour être présent sur les stores.',
+        icon: DevicePhoneMobileIcon,
+    },
+]
 
 const people = [
     {
@@ -134,6 +167,40 @@ export default function Home() {
                             </li>
                         ))}
                     </ul>
+                </div>
+            </div>
+            <div className="mx-auto mb-24 max-w-7xl px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl lg:text-center">
+                    <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900">
+                        Découvrez nos services
+                    </p>
+                    <p className="mt-6 text-lg leading-8 text-gray-600">
+                        Nous proposons des services sécurisés et fiables en
+                        constante évolution.
+                    </p>
+                </div>
+                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                    <dl className="grid grid-cols-1 items-center gap-20 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                        {features.map((feature) => (
+                            <div
+                                key={feature.name}
+                                className="h-full transform rounded-3xl border bg-black p-10 text-white transition duration-300 hover:scale-105"
+                            >
+                                <dt className="text-base font-semibold leading-7">
+                                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-white">
+                                        <feature.icon
+                                            className="h-6 w-6 text-black"
+                                            aria-hidden="true"
+                                        />
+                                    </div>
+                                    {feature.name}
+                                </dt>
+                                <dd className="bg- mt-2 text-base leading-7">
+                                    {feature.description}
+                                </dd>
+                            </div>
+                        ))}
+                    </dl>
                 </div>
             </div>
             <footer className="bg-black py-10">
