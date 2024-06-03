@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import LogoReact from '../../assets/logo_reactjs.png'
 import LogoDjango from '../../assets/logo_django.png'
@@ -6,7 +5,6 @@ import LogoNode from '../../assets/logo_node.png'
 import LogoDocker from '../../assets/logo_docker.png'
 import PPAbubakar from '../../assets/pp_abubakar.png'
 import PPYassine from '../../assets/pp_yassine.png'
-import PPManel from '../../assets/pp_manel.png'
 import {
     GlobeAltIcon,
     ShoppingCartIcon,
