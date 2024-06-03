@@ -11,11 +11,13 @@ import './index.css'
 // local imports
 import Home from './pages/Home'
 import Root from './routes/Root'
+import Error from './pages/Error'
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
+        errorElement: <Error />,
         children: [
             {
                 index: true,
