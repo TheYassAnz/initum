@@ -52,7 +52,7 @@ const people = [
         name: 'Abubakar ALIEV',
         role: 'Co-Foundateur & Développeur Back-End',
         imageUrl: PPAbubakar,
-        linkedin: 'https://www.linkedin.com/in/abubakar-aliev-49ab02133',
+        linkedin: 'https://www.linkedin.com/in/alieva/',
     },
 ]
 export default function Home() {
@@ -158,6 +158,7 @@ export default function Home() {
                                         </p>
                                         <p class="mt-2 flex">
                                             <Link
+                                                target="_blank"
                                                 to={person.linkedin}
                                                 className="bi bi-linkedin text-xl"
                                             ></Link>
