@@ -83,6 +83,17 @@ export default function Contact() {
                         </div>
                         <div>
                             <label className="mt-6 block text-sm font-semibold text-gray-900">
+                                Téléphone
+                            </label>
+                            <input
+                                name="phone"
+                                type="tel"
+                                className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label className="mt-6 block text-sm font-semibold text-gray-900">
                                 Votre projet
                             </label>
                             <select

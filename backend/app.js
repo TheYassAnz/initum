@@ -36,13 +36,13 @@ app.use((req, res, next) => {
 
 // simple middleware
 app.post('/api/mail/send', (req, res) => {
-    const { firstname, lastname, email, project, message } = req.body;
+    const { firstname, lastname, email, phone, project, message } = req.body;
     transporter.sendMail(
         {
             to: 'yassanz.contact@gmail.com, alievabubakar@mail.com',
             cc: 'yassanz.webmaster@gmail.com',
             subject: `Nouveau message de ${firstname} ${lastname} - ${project}`,
-            text: `Nom: ${firstname} ${lastname}\nEmail: ${email}\nProjet: ${project}\nMessage: ${message}`,
+            text: `Nom: ${firstname} ${lastname}\nEmail: ${email}\nTéléphone: ${phone}\nProjet: ${project}\nMessage: ${message}`,
         },
         function (error, info) {
             if (error) {
