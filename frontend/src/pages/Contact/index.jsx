@@ -1,11 +1,42 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import axios from 'axios'
+import { useState } from 'react'
+import Alert from '../../components/Alert'
 
 export default function Contact() {
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const [open, setOpen] = useState(false)
+    const [alertInfo, setAlertInfo] = useState({ title: '', message: '' })
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const form = new FormData(event.target)
+        const data = Object.fromEntries(form)
+        axios
+            .post('http://localhost:8000/api/mail/send', data)
+            .then((response) => {
+                event.target.reset()
+                setAlertInfo({
+                    title: 'Message envoyé',
+                    message: 'Votre message a été envoyé avec succès!',
+                })
+                setOpen(true)
+            })
+            .catch((error) => {
+                setAlertInfo({
+                    title: 'Erreur',
+                    message:
+                        "Une erreur est survenue lors de l'envoi du message.",
+                })
+                setOpen(true)
+            })
     }
     return (
         <>
+            <Alert
+                open={open}
+                setOpen={setOpen}
+                title={alertInfo.title}
+                message={alertInfo.message}
+            />
             <main className="mb-16 grid h-full place-items-center bg-white px-4 py-12 lg:px-8">
                 <div className="flex h-full flex-col items-center justify-center">
                     <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -22,6 +53,7 @@ export default function Contact() {
                                     Nom
                                 </label>
                                 <input
+                                    name="lastname"
                                     type="text"
                                     className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                     required
@@ -32,6 +64,7 @@ export default function Contact() {
                                     Prénom
                                 </label>
                                 <input
+                                    name="firstname"
                                     type="text"
                                     className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                     required
@@ -43,6 +76,7 @@ export default function Contact() {
                                 Adresse e-mail
                             </label>
                             <input
+                                name="email"
                                 type="email"
                                 className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                 required
@@ -53,25 +87,26 @@ export default function Contact() {
                                 Votre projet
                             </label>
                             <select
+                                name="project"
                                 className="mt-2 w-full rounded-md border border-gray-300 bg-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                 required
                             >
                                 <option value="default" disabled selected>
                                     --Choisissez une option--
                                 </option>
-                                <option value="landing">
+                                <option value="Site web de présentation">
                                     Site web de présentation
                                 </option>
-                                <option value="application">
+                                <option value="Application web interactive">
                                     Application web interactive
                                 </option>
-                                <option value="e-commerce">
+                                <option value="Site e-commerce">
                                     Site e-commerce
                                 </option>
-                                <option value="mobile">
+                                <option value="Application mobile">
                                     Application mobile
                                 </option>
-                                <option value="other">Autre</option>
+                                <option value="Autre">Autre</option>
                             </select>
                         </div>
                         <div>
@@ -79,6 +114,7 @@ export default function Contact() {
                                 Message
                             </label>
                             <textarea
+                                name="message"
                                 className="mt-2 h-28 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                 required
                             ></textarea>
