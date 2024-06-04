@@ -62,7 +62,7 @@ export default function Alert({ open, setOpen, title, message }) {
                                         className="inline-flex w-full justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 sm:ml-3 sm:w-auto"
                                         onClick={() => setOpen(false)}
                                     >
-                                        Close
+                                        Fermer
                                     </button>
                                 </div>
                             </DialogPanel>
