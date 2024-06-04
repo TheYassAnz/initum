@@ -5,13 +5,16 @@ import Alert from '../../components/Alert'
 export default function Contact() {
     const [open, setOpen] = useState(false)
     const [alertInfo, setAlertInfo] = useState({ title: '', message: '' })
+    const [loading, setLoading] = useState(false)
     const handleSubmit = (event) => {
         event.preventDefault()
         const form = new FormData(event.target)
         const data = Object.fromEntries(form)
+        setLoading(true)
         axios
             .post('http://localhost:8000/api/mail/send', data)
             .then((response) => {
+                setLoading(false)
                 event.target.reset()
                 setAlertInfo({
                     title: 'Message envoyé',
@@ -20,6 +23,7 @@ export default function Contact() {
                 setOpen(true)
             })
             .catch((error) => {
+                setLoading(false)
                 setAlertInfo({
                     title: 'Erreur',
                     message:
@@ -132,8 +136,30 @@ export default function Contact() {
                         <div>
                             <button
                                 type="submit"
-                                className="mt-6 w-full rounded-md bg-black px-4 py-2 font-semibold text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                className="mt-6 flex w-full items-center justify-center rounded-md bg-black px-4 py-2 font-semibold text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
                             >
+                                {loading && (
+                                    <svg
+                                        class="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <circle
+                                            class="opacity-25"
+                                            cx="12"
+                                            cy="12"
+                                            r="10"
+                                            stroke="currentColor"
+                                            stroke-width="4"
+                                        ></circle>
+                                        <path
+                                            class="opacity-75"
+                                            fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                        ></path>
+                                    </svg>
+                                )}
                                 Envoyer
                             </button>
                         </div>
