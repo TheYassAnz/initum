@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import {
     Dialog,
     DialogPanel,
@@ -6,10 +5,7 @@ import {
     Transition,
     TransitionChild,
 } from '@headlessui/react'
-import {
-    ExclamationTriangleIcon,
-    PaperAirplaneIcon,
-} from '@heroicons/react/24/outline'
+import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 
 export default function Alert({ open, setOpen, title, message }) {
     return (
