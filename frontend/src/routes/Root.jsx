@@ -13,7 +13,7 @@ const Root = () => {
                     <div className="flex items-center gap-x-8">
                         <Link
                             to="/contact"
-                            className="inline-flex rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800"
+                            className="hidden rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800 sm:flex "
                         >
                             Obtenir un devis
                         </Link>
