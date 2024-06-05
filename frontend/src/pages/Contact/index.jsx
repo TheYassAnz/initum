@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Alert from '../../components/Alert'
+import { ScrollRestoration } from 'react-router-dom'
 
 export default function Contact() {
     const [open, setOpen] = useState(false)
@@ -166,6 +167,7 @@ export default function Contact() {
                     </form>
                 </div>
             </main>
+            <ScrollRestoration />
         </>
     )
 }

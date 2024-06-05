@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, ScrollRestoration } from 'react-router-dom'
 import LogoReact from '../../assets/logo_reactjs.png'
 import LogoDjango from '../../assets/logo_django.png'
 import LogoNode from '../../assets/logo_node.png'
@@ -11,6 +11,7 @@ import {
     CursorArrowRaysIcon,
     DevicePhoneMobileIcon,
 } from '@heroicons/react/24/outline'
+import { useEffect } from 'react'
 
 const features = [
     {
@@ -179,7 +180,7 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                    <dl className="grid grid-cols-1 items-center gap-20 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                    <dl className="grid grid-cols-1 items-center gap-20 sm:gap-y-5 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                         {features.map((feature) => (
                             <div
                                 key={feature.name}
@@ -197,11 +198,21 @@ export default function Home() {
                                 <dd className="bg- mt-2 text-base leading-7">
                                     {feature.description}
                                 </dd>
+                                <dd>
+                                    <Link
+                                        to="/contact"
+                                        className="text-sm font-semibold leading-6 text-white"
+                                    >
+                                        En savoir plus{' '}
+                                        <span aria-hidden="true">→</span>
+                                    </Link>
+                                </dd>
                             </div>
                         ))}
                     </dl>
                 </div>
             </div>
+            <ScrollRestoration />
         </>
     )
 }
