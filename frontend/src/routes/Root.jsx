@@ -7,13 +7,13 @@ const Root = () => {
                 <nav className="flex items-center justify-between rounded-full px-10 py-5 text-black">
                     <div>
                         <Link to="/home" className="text-2xl font-bold">
-                            <span className="font-normal">Ae</span>theria.
+                            <span className="font-medium">ini</span>tum.
                         </Link>
                     </div>
                     <div className="flex items-center gap-x-8">
                         <Link
                             to="/contact"
-                            className="hidden rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800 sm:flex "
+                            className="hidden rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800 sm:flex"
                         >
                             Obtenir un devis
                         </Link>

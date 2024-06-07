@@ -82,7 +82,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="mx-auto max-w-7xl rounded-3xl bg-black px-16 py-20 text-white md:rounded-full">
+                <div className="mx-auto max-w-7xl rounded-3xl bg-black px-16 py-12 text-white md:rounded-full">
                     <h2 className="text-center text-lg font-semibold leading-8">
                         Nous travaillons avec les meilleurs technologies du
                         marché
