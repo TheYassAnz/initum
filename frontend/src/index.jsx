@@ -13,6 +13,7 @@ import Home from './pages/Home'
 import Root from './routes/Root'
 import Error from './pages/Error'
 import Contact from './pages/Contact'
+import About from './pages/About'
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: 'contact',
                 element: <Contact />,
+            },
+            {
+                path: 'about',
+                element: <About />,
             },
         ],
     },
