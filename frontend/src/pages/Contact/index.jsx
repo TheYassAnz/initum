@@ -22,7 +22,7 @@ export default function Contact() {
         const data = Object.fromEntries(form)
         setLoading(true)
         axios
-            .post('http://localhost:8000/api/mail/send', data)
+            .post('https://api.initum.fr/api/mail/send', data)
             .then((response) => {
                 setLoading(false)
                 event.target.reset()
