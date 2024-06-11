@@ -34,6 +34,24 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/', (req, res, next) => {
+    res.status(200).json({
+        message: 'Hello World! Welcome to the Initum API!',
+        authors: [
+            {
+                name: 'Yassine ANZAR BASHA',
+                email: 'yassanz.contact@gmail.com',
+                linkedin: 'https://www.linkedin.com/in/yanzarbasha/',
+            },
+            {
+                name: 'Abubakar ALIEV',
+                email: 'alievabubakar@mail.com',
+                linkedin: 'https://www.linkedin.com/in/alieva/',
+            },
+        ],
+    });
+});
+
 // simple middleware
 app.post('/api/mail/send', (req, res) => {
     const { firstname, lastname, email, phone, project, message } = req.body;
