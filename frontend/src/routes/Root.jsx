@@ -46,17 +46,17 @@ const Root = () => {
                             <p>
                                 <Link
                                     className="text-gray-400 hover:underline"
-                                    to="tel:0752701742"
+                                    to="tel:+33752701742"
                                 >
                                     07 52 70 17 42
                                 </Link>
                             </p>
                             <p>
                                 <Link
-                                    to="mailto:contact@eatheria.com"
+                                    to="mailto:contact@initum.fr"
                                     className="text-gray-400 hover:underline"
                                 >
-                                    contact@aetheria.com
+                                    contact@initum.fr
                                 </Link>
                             </p>
                         </div>
@@ -171,7 +171,7 @@ const Root = () => {
                     </div>
                     <div className="mt-8 text-center">
                         <p className="text-gray-400">
-                            © 2024 Aetheria. Tous droits réservés.
+                            © 2024 initum. Tous droits réservés.
                         </p>
                     </div>
                 </div>
