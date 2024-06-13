@@ -75,8 +75,7 @@ app.post('/api/mail/send', (req, res) => {
                 } else {
                     transporter.sendMail(
                         {
-                            to: 'yassanz.contact@gmail.com, alievabubakar@mail.com',
-                            cc: 'yassanz.webmaster@gmail.com',
+                            to: 'yassanz.webmaster@gmail.com',
                             subject: `Nouveau message de ${firstname} ${lastname} - ${project}`,
                             text: `Nom: ${firstname} ${lastname}\nEmail: ${email}\nTéléphone: ${phone}\nProjet: ${project}\nMessage: ${message}`,
                         },
