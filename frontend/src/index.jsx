@@ -1,11 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {
-    createBrowserRouter,
-    Navigate,
-    Outlet,
-    RouterProvider,
-} from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import './index.css'
 
 // local imports
