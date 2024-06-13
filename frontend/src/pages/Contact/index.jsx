@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Alert from '../../components/Alert'
 import { ScrollRestoration } from 'react-router-dom'
 import {
@@ -7,25 +7,33 @@ import {
     Fieldset,
     Input,
     Label,
-    Legend,
     Select,
     Textarea,
 } from '@headlessui/react'
 
+import { useForm } from 'react-hook-form'
+import { ErrorMessage } from '@hookform/error-message'
+
 export default function Contact() {
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+        reset,
+    } = useForm({
+        criteriaMode: 'all',
+    })
     const [open, setOpen] = useState(false)
     const [alertInfo, setAlertInfo] = useState({ title: '', message: '' })
     const [loading, setLoading] = useState(false)
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        const form = new FormData(event.target)
-        const data = Object.fromEntries(form)
+
+    const onSubmit = (data) => {
         setLoading(true)
         axios
             .post('https://api.initum.fr/api/mail/send', data)
             .then((response) => {
                 setLoading(false)
-                event.target.reset()
+                reset()
                 setAlertInfo({
                     title: 'Message envoyé',
                     message: 'Votre message a été envoyé avec succès!',
@@ -59,8 +67,9 @@ export default function Contact() {
                         Vous avez une question ou un projet en tête ?
                         Contactez-nous dès maintenant.
                     </p>
+
                     <form
-                        onSubmit={(e) => handleSubmit(e)}
+                        onSubmit={handleSubmit(onSubmit)}
                         className="mt-10 w-full"
                     >
                         <Fieldset>
@@ -70,10 +79,42 @@ export default function Contact() {
                                         Nom :
                                     </Label>
                                     <Input
-                                        name="lastname"
-                                        type="text"
                                         className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                        required
+                                        name="lastname"
+                                        {...register('lastname', {
+                                            required: 'Ce champ est requis.',
+                                            pattern: {
+                                                value: /^(?=.*[A-Za-z])[A-Za-z\s]+$/i,
+                                                message:
+                                                    'Ce champ doit contenir uniquement des lettres.',
+                                            },
+                                            maxLength: {
+                                                value: 20,
+                                                message:
+                                                    'Ce champ doit contenir moins de 20 caractères.',
+                                            },
+                                        })}
+                                        type="text"
+                                    />
+                                    <ErrorMessage
+                                        errors={errors}
+                                        name="lastname"
+                                        render={({ messages }) => {
+                                            console.log('messages', messages)
+                                            return messages
+                                                ? Object.entries(messages).map(
+                                                      ([type, message]) => (
+                                                          <p
+                                                              key={type}
+                                                              className="p-1 text-red-700"
+                                                          >
+                                                              <i class="bi bi-exclamation-triangle mr-2"></i>
+                                                              {message}
+                                                          </p>
+                                                      )
+                                                  )
+                                                : null
+                                        }}
                                     />
                                 </Field>
                                 <Field className="w-full">
@@ -81,10 +122,42 @@ export default function Contact() {
                                         Prénom :
                                     </Label>
                                     <Input
-                                        name="firstname"
-                                        type="text"
                                         className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                        required
+                                        name="firstname"
+                                        {...register('firstname', {
+                                            required: 'Ce champ est requis.',
+                                            pattern: {
+                                                value: /^(?=.*[A-Za-z])[A-Za-z\s]+$/i,
+                                                message:
+                                                    'Ce champ doit contenir uniquement des lettres.',
+                                            },
+                                            maxLength: {
+                                                value: 20,
+                                                message:
+                                                    'Ce champ doit contenir moins de 20 caractères.',
+                                            },
+                                        })}
+                                        type="text"
+                                    />
+                                    <ErrorMessage
+                                        errors={errors}
+                                        name="firstname"
+                                        render={({ messages }) => {
+                                            console.log('messages', messages)
+                                            return messages
+                                                ? Object.entries(messages).map(
+                                                      ([type, message]) => (
+                                                          <p
+                                                              key={type}
+                                                              className="p-1 text-red-700"
+                                                          >
+                                                              <i class="bi bi-exclamation-triangle mr-2"></i>
+                                                              {message}
+                                                          </p>
+                                                      )
+                                                  )
+                                                : null
+                                        }}
                                     />
                                 </Field>
                             </Field>
@@ -96,7 +169,34 @@ export default function Contact() {
                                     name="email"
                                     type="email"
                                     className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                    required
+                                    {...register('email', {
+                                        required: 'Ce champ est requis.',
+                                        pattern: {
+                                            value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
+                                            message:
+                                                'Veuillez entrer une adresse e-mail valide.',
+                                        },
+                                    })}
+                                />
+                                <ErrorMessage
+                                    errors={errors}
+                                    name="email"
+                                    render={({ messages }) => {
+                                        console.log('messages', messages)
+                                        return messages
+                                            ? Object.entries(messages).map(
+                                                  ([type, message]) => (
+                                                      <p
+                                                          key={type}
+                                                          className="p-1 text-red-700"
+                                                      >
+                                                          <i class="bi bi-exclamation-triangle mr-2"></i>
+                                                          {message}
+                                                      </p>
+                                                  )
+                                              )
+                                            : null
+                                    }}
                                 />
                             </Field>
                             <Field>
@@ -107,7 +207,34 @@ export default function Contact() {
                                     name="phone"
                                     type="tel"
                                     className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                    required
+                                    {...register('phone', {
+                                        required: 'Ce champ est requis.',
+                                        pattern: {
+                                            value: /^[0-9]{10}$/i,
+                                            message:
+                                                'Veuillez entrer un numéro de téléphone valide.',
+                                        },
+                                    })}
+                                />
+                                <ErrorMessage
+                                    errors={errors}
+                                    name="phone"
+                                    render={({ messages }) => {
+                                        console.log('messages', messages)
+                                        return messages
+                                            ? Object.entries(messages).map(
+                                                  ([type, message]) => (
+                                                      <p
+                                                          key={type}
+                                                          className="p-1 text-red-700"
+                                                      >
+                                                          <i class="bi bi-exclamation-triangle mr-2"></i>
+                                                          {message}
+                                                      </p>
+                                                  )
+                                              )
+                                            : null
+                                    }}
                                 />
                             </Field>
                             <Field>
@@ -117,9 +244,11 @@ export default function Contact() {
                                 <Select
                                     name="project"
                                     className="mt-2 w-full rounded-md border border-gray-300 bg-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                    required
+                                    {...register('project', {
+                                        required: 'Ce champ est requis.',
+                                    })}
                                 >
-                                    <option value="default" disabled selected>
+                                    <option disabled selected>
                                         -- Choisissez un sujet --
                                     </option>
                                     <option value="Site web de présentation">
@@ -136,6 +265,26 @@ export default function Contact() {
                                     </option>
                                     <option value="Autre">Autre</option>
                                 </Select>
+                                <ErrorMessage
+                                    errors={errors}
+                                    name="project"
+                                    render={({ messages }) => {
+                                        console.log('messages', messages)
+                                        return messages
+                                            ? Object.entries(messages).map(
+                                                  ([type, message]) => (
+                                                      <p
+                                                          key={type}
+                                                          className="p-1 text-red-700"
+                                                      >
+                                                          <i class="bi bi-exclamation-triangle mr-2"></i>
+                                                          {message}
+                                                      </p>
+                                                  )
+                                              )
+                                            : null
+                                    }}
+                                />
                             </Field>
                             <Field>
                                 <Label className="mt-6 block text-sm font-semibold text-gray-900">
@@ -145,8 +294,40 @@ export default function Contact() {
                                     name="message"
                                     className="mt-2 w-full resize-none rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                     rows={4}
-                                    required
+                                    {...register('message', {
+                                        required: 'Ce champ est requis.',
+                                        minLength: {
+                                            value: 10,
+                                            message:
+                                                'Ce champ doit contenir au moins 10 caractères.',
+                                        },
+                                        maxLength: {
+                                            value: 500,
+                                            message:
+                                                'Ce champ doit contenir moins de 500 caractères.',
+                                        },
+                                    })}
                                 ></Textarea>
+                                <ErrorMessage
+                                    errors={errors}
+                                    name="message"
+                                    render={({ messages }) => {
+                                        console.log('messages', messages)
+                                        return messages
+                                            ? Object.entries(messages).map(
+                                                  ([type, message]) => (
+                                                      <p
+                                                          key={type}
+                                                          className="p-1 text-red-700"
+                                                      >
+                                                          <i class="bi bi-exclamation-triangle mr-2"></i>
+                                                          {message}
+                                                      </p>
+                                                  )
+                                              )
+                                            : null
+                                    }}
+                                />
                             </Field>
                             <Field>
                                 <button
