@@ -33,7 +33,7 @@ export default function Contact() {
     const onSubmit = (data) => {
         setLoading(true)
         axios
-            .post('http://localhost:8000/api/mail/send', {
+            .post('http://api.initum.fr/api/mail/send', {
                 ...data,
                 captchaToken,
             })
