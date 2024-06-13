@@ -14,6 +14,8 @@ import {
 import { useForm } from 'react-hook-form'
 import { ErrorMessage } from '@hookform/error-message'
 
+import ReCAPTCHA from 'react-google-recaptcha'
+
 export default function Contact() {
     const {
         register,
@@ -26,11 +28,15 @@ export default function Contact() {
     const [open, setOpen] = useState(false)
     const [alertInfo, setAlertInfo] = useState({ title: '', message: '' })
     const [loading, setLoading] = useState(false)
+    const [captchaToken, setCaptchaToken] = useState('')
 
     const onSubmit = (data) => {
         setLoading(true)
         axios
-            .post('https://api.initum.fr/api/mail/send', data)
+            .post('http://localhost:8000/api/mail/send', {
+                ...data,
+                captchaToken,
+            })
             .then((response) => {
                 setLoading(false)
                 reset()
@@ -327,6 +333,15 @@ export default function Contact() {
                                               )
                                             : null
                                     }}
+                                />
+                            </Field>
+                            <Field>
+                                <ReCAPTCHA
+                                    className="mt-3"
+                                    sitekey={
+                                        process.env.REACT_APP_RECAPTCHA_SITE_KEY
+                                    }
+                                    onChange={(value) => setCaptchaToken(value)}
                                 />
                             </Field>
                             <Field>
