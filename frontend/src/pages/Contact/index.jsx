@@ -16,8 +16,6 @@ import { ErrorMessage } from '@hookform/error-message'
 
 import ReCAPTCHA from 'react-google-recaptcha'
 
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
-
 export default function Contact() {
     const {
         register,
