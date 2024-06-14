@@ -23,7 +23,7 @@ const people = [
 
 export default function About() {
     return (
-        <main className="mb-16 grid h-full place-items-center gap-y-10 bg-white px-8 py-12 lg:px-8">
+        <main className="mb-16 grid h-full place-items-center gap-y-10 bg-[#E4E2DD] px-8 py-12 lg:px-8">
             <div className="grid gap-y-10">
                 <div className="flex max-w-4xl flex-col">
                     <h1 className="mt-4 text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -64,7 +64,7 @@ export default function About() {
                                         {person.stack.map((stack, index) => (
                                             <span
                                                 key={index}
-                                                class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-black ring-1 ring-inset ring-blue-700/10"
+                                                class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-[#171716] ring-1 ring-inset ring-blue-700/10"
                                             >
                                                 {stack}
                                             </span>
@@ -74,7 +74,7 @@ export default function About() {
                                         <Link
                                             target="_blank"
                                             to={person.linkedin}
-                                            className="bi bi-linkedin text-2xl text-black"
+                                            className="bi bi-linkedin text-2xl text-[#171716]"
                                         ></Link>
                                     </p>
                                 </div>

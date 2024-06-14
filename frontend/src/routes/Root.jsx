@@ -4,16 +4,19 @@ const Root = () => {
     return (
         <>
             <header className="mx-5 mt-5">
-                <nav className="flex items-center justify-between rounded-full px-10 py-5 text-black">
+                <nav className="flex items-center justify-between rounded-full px-10 py-5 ">
                     <div>
-                        <Link to="/home" className="text-2xl font-bold">
+                        <Link
+                            to="/home"
+                            className="text-2xl font-bold text-[#171716]"
+                        >
                             <span className="font-medium">ini</span>tum.
                         </Link>
                     </div>
                     <div className="flex items-center gap-x-8">
                         <Link
                             to="/contact"
-                            className="hidden rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800 sm:flex"
+                            className="hidden rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold  transition hover:bg-neutral-800 sm:flex"
                         >
                             Obtenir un devis
                         </Link>
@@ -33,7 +36,7 @@ const Root = () => {
             <footer className="bg-black py-10">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                        <div className="text-white">
+                        <div className="">
                             <h3 className="mb-4 text-lg font-semibold">
                                 Informations
                             </h3>
@@ -60,7 +63,7 @@ const Root = () => {
                                 </Link>
                             </p>
                         </div>
-                        <div className="text-white">
+                        <div className="">
                             <h3 className="mb-4 text-lg font-semibold">
                                 Liens rapides
                             </h3>
@@ -68,7 +71,7 @@ const Root = () => {
                                 <li>
                                     <Link
                                         to="/home"
-                                        className="text-gray-400 hover:text-white"
+                                        className="hover: text-gray-400"
                                     >
                                         Accueil
                                     </Link>
@@ -76,7 +79,7 @@ const Root = () => {
                                 <li>
                                     <Link
                                         to="/team"
-                                        className="text-gray-400 hover:text-white"
+                                        className="hover: text-gray-400"
                                     >
                                         Equipe
                                     </Link>
@@ -84,7 +87,7 @@ const Root = () => {
                                 <li>
                                     <Link
                                         to="/contact"
-                                        className="text-gray-400 hover:text-white"
+                                        className="hover: text-gray-400"
                                     >
                                         Contact
                                     </Link>
@@ -92,14 +95,14 @@ const Root = () => {
                                 <li>
                                     <Link
                                         to="/about"
-                                        className="text-gray-400 hover:text-white"
+                                        className="hover: text-gray-400"
                                     >
                                         À propos
                                     </Link>
                                 </li>
                             </ul>
                         </div>
-                        <div className="text-white">
+                        <div className="">
                             <h3 className="mb-4 text-lg font-semibold">
                                 Réseaux sociaux
                             </h3>
@@ -107,7 +110,7 @@ const Root = () => {
                                 <li>
                                     <Link
                                         to="#"
-                                        className="text-gray-400 hover:text-white"
+                                        className="hover: text-gray-400"
                                     >
                                         <i className="bi bi-facebook"></i>
                                     </Link>
@@ -115,7 +118,7 @@ const Root = () => {
                                 <li>
                                     <Link
                                         to="#"
-                                        className="text-gray-400 hover:text-white"
+                                        className="hover: text-gray-400"
                                     >
                                         <i className="bi bi-twitter"></i>
                                     </Link>
@@ -123,7 +126,7 @@ const Root = () => {
                                 <li>
                                     <Link
                                         to="#"
-                                        className="text-gray-400 hover:text-white"
+                                        className="hover: text-gray-400"
                                     >
                                         <i className="bi bi-instagram"></i>
                                     </Link>
@@ -131,7 +134,7 @@ const Root = () => {
                                 <li>
                                     <Link
                                         to="#"
-                                        className="text-gray-400 hover:text-white"
+                                        className="hover: text-gray-400"
                                     >
                                         <i className="bi bi-linkedin"></i>
                                     </Link>
@@ -139,7 +142,7 @@ const Root = () => {
                             </ul>
                         </div>
                         <div>
-                            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                            <h2 class="text-3xl font-bold tracking-tight  sm:text-4xl">
                                 S'inscrire à la newsletter
                             </h2>
                             <p class="mt-4 text-lg leading-8 text-gray-300">
@@ -157,12 +160,12 @@ const Root = () => {
                                     type="email"
                                     autocomplete="email"
                                     required
-                                    class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
+                                    class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2  shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
                                     placeholder="Entrez votre adresse e-mail"
                                 />
                                 <button
                                     type="submit"
-                                    class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm"
+                                    class="flex-none rounded-md bg-[#E4E2DD] px-3.5 py-2.5 text-sm font-semibold text-[#171716] shadow-sm"
                                 >
                                     S'inscrire
                                 </button>

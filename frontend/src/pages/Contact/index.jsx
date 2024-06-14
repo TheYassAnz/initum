@@ -16,6 +16,8 @@ import { ErrorMessage } from '@hookform/error-message'
 
 import ReCAPTCHA from 'react-google-recaptcha'
 
+import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+
 export default function Contact() {
     const {
         register,
@@ -26,14 +28,18 @@ export default function Contact() {
         criteriaMode: 'all',
     })
     const [open, setOpen] = useState(false)
-    const [alertInfo, setAlertInfo] = useState({ title: '', message: '' })
+    const [alertInfo, setAlertInfo] = useState({
+        title: '',
+        message: '',
+        icon: '',
+    })
     const [loading, setLoading] = useState(false)
     const [captchaToken, setCaptchaToken] = useState('')
 
     const onSubmit = (data) => {
         setLoading(true)
         axios
-            .post(`${process.env.REACT_APP_API_URL}/api/mail/send`, {
+            .post(`${process.env.REACT_APP_AXIOS_API_URL}/api/mail/send`, {
                 ...data,
                 captchaToken,
             })
@@ -43,6 +49,7 @@ export default function Contact() {
                 setAlertInfo({
                     title: 'Message envoyé',
                     message: 'Votre message a été envoyé avec succès!',
+                    type: 'success',
                 })
                 setOpen(true)
             })
@@ -52,6 +59,7 @@ export default function Contact() {
                     title: 'Erreur',
                     message:
                         "Une erreur est survenue lors de l'envoi du message.",
+                    type: 'error',
                 })
                 setOpen(true)
             })
@@ -63,8 +71,9 @@ export default function Contact() {
                 setOpen={setOpen}
                 title={alertInfo.title}
                 message={alertInfo.message}
+                type={alertInfo.type}
             />
-            <main className="mb-16 grid h-full place-items-center bg-white px-8 py-12 lg:px-8">
+            <main className="mb-16 grid h-full place-items-center px-8 py-12 lg:px-8">
                 <div className="flex h-full flex-col items-center justify-center">
                     <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
                         Contactez-nous
@@ -76,7 +85,7 @@ export default function Contact() {
 
                     <form
                         onSubmit={handleSubmit(onSubmit)}
-                        className="mt-10 w-full"
+                        className="mt-10 w-full text-[#171716]"
                     >
                         <Fieldset>
                             <Field className="flex flex-col justify-between gap-x-10 sm:flex-row">
@@ -85,7 +94,7 @@ export default function Contact() {
                                         Nom :
                                     </Label>
                                     <Input
-                                        className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                        className="mt-2 w-full rounded-md border border-gray-400 bg-[#E4E2DD] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400 "
                                         name="lastname"
                                         {...register('lastname', {
                                             required: 'Ce champ est requis.',
@@ -128,7 +137,7 @@ export default function Contact() {
                                         Prénom :
                                     </Label>
                                     <Input
-                                        className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                        className="mt-2 w-full rounded-md border border-gray-400 bg-[#E4E2DD] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                         name="firstname"
                                         {...register('firstname', {
                                             required: 'Ce champ est requis.',
@@ -174,7 +183,7 @@ export default function Contact() {
                                 <Input
                                     name="email"
                                     type="email"
-                                    className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                    className="mt-2 w-full rounded-md border border-gray-400 bg-[#E4E2DD] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                     {...register('email', {
                                         required: 'Ce champ est requis.',
                                         pattern: {
@@ -212,7 +221,7 @@ export default function Contact() {
                                 <Input
                                     name="phone"
                                     type="tel"
-                                    className="mt-2 w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                    className="mt-2 w-full rounded-md border border-gray-400 bg-[#E4E2DD] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                     {...register('phone', {
                                         required: 'Ce champ est requis.',
                                         pattern: {
@@ -249,7 +258,7 @@ export default function Contact() {
                                 </Label>
                                 <Select
                                     name="project"
-                                    className="mt-2 w-full rounded-md border border-gray-300 bg-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                    className="mt-2 w-full rounded-md border border-gray-400 bg-[#E4E2DD] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                     {...register('project', {
                                         required: 'Ce champ est requis.',
                                     })}
@@ -298,7 +307,7 @@ export default function Contact() {
                                 </Label>
                                 <Textarea
                                     name="message"
-                                    className="mt-2 w-full resize-none rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                    className="mt-2 w-full resize-none rounded-md border border-gray-400 bg-[#E4E2DD] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                     rows={4}
                                     {...register('message', {
                                         required: 'Ce champ est requis.',
@@ -347,11 +356,11 @@ export default function Contact() {
                             <Field>
                                 <button
                                     type="submit"
-                                    className="mt-6 flex w-full items-center justify-center rounded-md bg-black px-4 py-2 font-semibold text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                    className="mt-6 flex w-full items-center justify-center rounded-md bg-black px-4 py-2 font-semibold  text-[#E4E2DD] shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                 >
                                     {loading && (
                                         <svg
-                                            class="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
+                                            class="-ml-1 mr-3 h-5 w-5 animate-spin "
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"

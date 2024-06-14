@@ -69,7 +69,7 @@ export default function Home() {
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <Link
                                 to="/contact"
-                                className="rounded-full bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                                className="rounded-full bg-black px-3.5 py-2.5 text-sm font-semibold  shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                             >
                                 Contactez-nous
                             </Link>
@@ -82,7 +82,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="mx-auto max-w-7xl rounded-3xl bg-black px-16 py-12 text-white md:rounded-full">
+                <div className="mx-auto max-w-7xl rounded-3xl bg-black px-16 py-12  md:rounded-full">
                     <h2 className="text-center text-lg font-semibold leading-8">
                         Nous travaillons avec les meilleurs technologies du
                         marché
@@ -187,12 +187,12 @@ export default function Home() {
                                 <Link to="/contact">
                                     <div
                                         key={feature.name}
-                                        className="h-full transform rounded-3xl border bg-black p-10 text-white transition duration-300 hover:scale-105"
+                                        className="h-full transform rounded-3xl border bg-black p-10  transition duration-300 hover:scale-105"
                                     >
                                         <dt className="text-base font-semibold leading-7">
                                             <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-white">
                                                 <feature.icon
-                                                    className="h-6 w-6 text-black"
+                                                    className="h-6 w-6 text-[#171716]"
                                                     aria-hidden="true"
                                                 />
                                             </div>
@@ -202,7 +202,7 @@ export default function Home() {
                                             {feature.description}
                                         </dd>
                                         <dd>
-                                            <span className="text-sm font-semibold leading-6 text-white">
+                                            <span className="text-sm font-semibold leading-6 ">
                                                 En savoir plus{' '}
                                                 <span aria-hidden="true">
                                                     →
