@@ -16,19 +16,10 @@ const Root = () => {
                     <div className="flex items-center gap-x-8">
                         <Link
                             to="/contact"
-                            className="hidden rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold  transition hover:bg-neutral-800 sm:flex"
+                            className="rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold transition hover:bg-neutral-800"
                         >
                             Obtenir un devis
                         </Link>
-                        <button className="group -m-2.5 rounded-full p-2.5 transition hover:bg-neutral-950/10">
-                            <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                                class="h-6 w-6 fill-neutral-950 group-hover:fill-neutral-700"
-                            >
-                                <path d="M2 6h20v2H2zM2 16h20v2H2z"></path>
-                            </svg>
-                        </button>
                     </div>
                 </nav>
             </header>
