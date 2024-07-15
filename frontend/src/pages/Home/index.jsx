@@ -42,13 +42,13 @@ const features = [
 const people = [
     {
         name: 'Yassine ANZAR BASHA',
-        role: 'Fondateur & Développeur Full Stack',
+        role: 'Développeur Full Stack',
         imageUrl: PPYassine,
         linkedin: 'https://linkedin.com/in/yanzarbasha',
     },
     {
         name: 'Abubakar ALIEV',
-        role: 'Co-Foundateur & Développeur Back-End',
+        role: 'Développeur Back End',
         imageUrl: PPAbubakar,
         linkedin: 'https://www.linkedin.com/in/alieva/',
     },
