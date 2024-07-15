@@ -84,7 +84,7 @@ export default function Home() {
                 </div>
                 <div className="mx-auto max-w-7xl rounded-3xl bg-black px-16 py-12  md:rounded-full">
                     <h2 className="text-center text-lg font-semibold leading-8">
-                        Nous travaillons avec les meilleurs technologies du
+                        Nous travaillons avec les meilleures technologies du
                         marché
                     </h2>
                     <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
