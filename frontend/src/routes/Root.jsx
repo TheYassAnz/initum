@@ -98,7 +98,7 @@ const Root = () => {
                                 Réseaux sociaux
                             </h3>
                             <ul className="flex space-x-4">
-                                <li>
+                                {/* <li>
                                     <Link
                                         to="#"
                                         className="hover: text-gray-400"
@@ -121,11 +121,12 @@ const Root = () => {
                                     >
                                         <i className="bi bi-instagram"></i>
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <Link
-                                        to="#"
+                                        to="https://www.linkedin.com/company/theinitum"
                                         className="hover: text-gray-400"
+                                        target="_blank"
                                     >
                                         <i className="bi bi-linkedin"></i>
                                     </Link>
