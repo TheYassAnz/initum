@@ -72,6 +72,7 @@ app.post('/api/mail/send', (req, res) => {
             .then((response) => {
                 if (!response.data.success) {
                     res.status(500).json({ message: 'Invalid Captcha' });
+                    console.log('Invalid Captcha');
                 } else {
                     transporter.sendMail(
                         {
