@@ -86,18 +86,20 @@ export default function About() {
                     </h2>
                     <p className="mt-6 text-justify text-base leading-7 text-gray-600">
                         <div>
-                            <span className="font-bold">Adresse:</span> 7 Rue
-                            Maurice Grandcoing 94200 Ivry-sur-Seine
-                        </div>
-                        <div>
                             <span className="font-bold">Téléphone:</span>{' '}
-                            <Link to="tel:=+33752701742">
-                                +33 7 52 70 17 42
+                            <Link
+                                to="tel:=+33752701742"
+                                className="hover:underline"
+                            >
+                                07 52 70 17 42
                             </Link>
                         </div>
                         <div>
                             <span className="font-bold">Email:</span>{' '}
-                            <Link to="mailto:contact@initum.fr">
+                            <Link
+                                to="mailto:contact@initum.fr"
+                                className="hover:underline"
+                            >
                                 contact@initum.fr
                             </Link>
                         </div>

@@ -31,17 +31,12 @@ const Root = () => {
                             <h3 className="mb-4 text-lg font-semibold">
                                 Informations
                             </h3>
-                            <p className="text-gray-400">
-                                7 Rue Maurice Grandcoing
-                            </p>
-                            <p className="mb-3 text-gray-400">
-                                94200 Ivry-sur-Seine
-                            </p>
                             <p>
                                 <Link
                                     className="text-gray-400 hover:underline"
                                     to="tel:+33752701742"
                                 >
+                                    <i className="bi bi-telephone mr-1"></i>
                                     07 52 70 17 42
                                 </Link>
                             </p>
@@ -50,6 +45,7 @@ const Root = () => {
                                     to="mailto:contact@initum.fr"
                                     className="text-gray-400 hover:underline"
                                 >
+                                    <i class="bi bi-envelope mr-1"></i>
                                     contact@initum.fr
                                 </Link>
                             </p>
