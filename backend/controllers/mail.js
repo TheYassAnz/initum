@@ -45,6 +45,7 @@ exports.postMessage = (req, res) => {
             )
             .then((response, error) => {
                 if (!response.data.success) {
+                    console.log(p);
                     res.status(500).json({
                         message: 'Invalid Captcha!',
                         error,
