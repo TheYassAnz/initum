@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const axios = require('axios');
 
 // Load environment variables
-const p = dotenv.config().parsed;
+const p = dotenv.config().parsed || process.env;
 
 // Create a transporter object
 var transporter = nodemailer.createTransport({
@@ -43,14 +43,10 @@ exports.postMessage = (req, res) => {
             .post(
                 `https://www.google.com/recaptcha/api/siteverify?secret=${p.RECAPTCHA_SERVER_KEY}&response=${captchaToken}`
             )
-            .then((response, error) => {
+            .then((response) => {
                 if (!response.data.success) {
-                    console.log(p);
                     res.status(500).json({
                         message: 'Invalid Captcha!',
-                        error,
-                        RECAPTCHA_SERVER_KEY: p.RECAPTCHA_SERVER_KEY,
-                        captchaToken: captchaToken,
                     });
                 } else {
                     transporter.sendMail(

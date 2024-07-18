@@ -6,7 +6,7 @@ const axios = require('axios');
 const mongoose = require('mongoose');
 
 // Load environment variables
-const p = dotenv.config().parsed;
+const p = dotenv.config().parsed || process.env;
 
 // Middleware which intercept JSON data
 app.use(express.json());
