@@ -1,9 +1,8 @@
-const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
 const axios = require('axios');
 
 // Load environment variables
-const p = dotenv.config().parsed || process.env;
+const p = process.env;
 
 // Create a transporter object
 var transporter = nodemailer.createTransport({
@@ -47,6 +46,7 @@ exports.postMessage = (req, res) => {
                 if (!response.data.success) {
                     res.status(500).json({
                         message: 'Invalid Captcha!',
+                        captchaServerKey: p.RECAPTCHA_SERVER_KEY,
                     });
                 } else {
                     transporter.sendMail(

@@ -1,12 +1,11 @@
 const express = require('express');
 const app = express();
-const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
 const axios = require('axios');
 const mongoose = require('mongoose');
 
 // Load environment variables
-const p = dotenv.config().parsed || process.env;
+const p = process.env;
 
 // Middleware which intercept JSON data
 app.use(express.json());
