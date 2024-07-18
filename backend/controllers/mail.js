@@ -43,9 +43,14 @@ exports.postMessage = (req, res) => {
             .post(
                 `https://www.google.com/recaptcha/api/siteverify?secret=${p.RECAPTCHA_SERVER_KEY}&response=${captchaToken}`
             )
-            .then((response) => {
+            .then((response, error) => {
                 if (!response.data.success) {
-                    res.status(500).json({ message: 'Invalid Captcha!' });
+                    res.status(500).json({
+                        message: 'Invalid Captcha!',
+                        error,
+                        p,
+                        captchaToken: captchaToken,
+                    });
                 } else {
                     transporter.sendMail(
                         {
