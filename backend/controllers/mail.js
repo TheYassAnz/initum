@@ -48,7 +48,7 @@ exports.postMessage = (req, res) => {
                     res.status(500).json({
                         message: 'Invalid Captcha!',
                         error,
-                        p,
+                        RECAPTCHA_SERVER_KEY: p.RECAPTCHA_SERVER_KEY,
                         captchaToken: captchaToken,
                     });
                 } else {
