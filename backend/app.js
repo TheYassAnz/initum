@@ -1,18 +1,14 @@
-// import express
 const express = require('express');
-
-// create an express app
 const app = express();
-
 const dotenv = require('dotenv');
+const nodemailer = require('nodemailer');
+const axios = require('axios');
+const mongoose = require('mongoose');
+
+// Load environment variables
 const p = dotenv.config().parsed;
 
-// nodemailer
-const nodemailer = require('nodemailer');
-
-// axios
-const axios = require('axios');
-
+// Create a transporter object
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -23,6 +19,19 @@ var transporter = nodemailer.createTransport({
 
 // Middleware which intercept JSON data
 app.use(express.json());
+
+// Connect to MongoDB
+mongoose
+    .connect(p.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((error) => {
+        console.log('Connection to MongoDB failed: ' + error);
+    });
 
 // cors middleware
 app.use((req, res, next) => {
