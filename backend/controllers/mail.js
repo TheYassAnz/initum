@@ -29,6 +29,15 @@ exports.postMessage = (req, res) => {
             .status(400)
             .json({ message: 'Veuillez remplir tous les champs!' });
     }
+    const {
+        firstname,
+        lastname,
+        email,
+        phone,
+        project,
+        message,
+        captchaToken,
+    } = req.body;
     try {
         axios
             .post(
@@ -40,7 +49,7 @@ exports.postMessage = (req, res) => {
                 } else {
                     transporter.sendMail(
                         {
-                            to: 'contact@initum.fr',
+                            to: 'initum.contact@gmail.com',
                             subject: `Nouveau message de ${firstname} ${lastname} - ${project}`,
                             text: `Nom: ${firstname} ${lastname}\nEmail: ${email}\nTéléphone: ${phone}\nProjet: ${project}\nMessage: ${message}`,
                         },
