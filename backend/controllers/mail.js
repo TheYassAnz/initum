@@ -46,7 +46,6 @@ exports.postMessage = (req, res) => {
                 if (!response.data.success) {
                     res.status(500).json({
                         message: 'Invalid Captcha!',
-                        captchaServerKey: p.RECAPTCHA_SERVER_KEY,
                     });
                 } else {
                     transporter.sendMail(
