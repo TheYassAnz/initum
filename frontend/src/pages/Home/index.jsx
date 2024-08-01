@@ -14,15 +14,15 @@ import {
 
 const features = [
     {
-        name: 'Site web de presentation',
+        name: 'Site web de présentation',
         description:
-            'Obtenez votre site web de presentation simple pour booster votre image sur le web.',
+            'Obtenez votre site vitrine simple pour booster votre image sur le web.',
         icon: GlobeAltIcon,
     },
     {
         name: 'Application web interactive',
         description:
-            'Obtenez une application web interactive pour vos clients et vos employés.',
+            'Obtenez une application web complète et interactive pour vos utilisateurs.',
         icon: CursorArrowRaysIcon,
     },
     {
@@ -34,7 +34,7 @@ const features = [
     {
         name: 'Application mobile',
         description:
-            'Obtenez votre application mobile pour être présent sur les stores.',
+            'Obtenez votre application mobile pour être présent sur IOS et Android.',
         icon: DevicePhoneMobileIcon,
     },
 ]
@@ -145,6 +145,12 @@ export default function Home() {
                                             </h3>
                                             <p className="text-sm font-semibold leading-6 text-gray-600">
                                                 {person.role}
+                                            </p>
+                                            <p>
+                                                <Link
+                                                    to={person.linkedin}
+                                                    className="bi bi-linkedin text-md text-black"
+                                                ></Link>
                                             </p>
                                             <p>
                                                 <Link
