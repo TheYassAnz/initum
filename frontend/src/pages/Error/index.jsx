@@ -23,7 +23,7 @@ export default function Error() {
                             Retour à l'accueil{' '}
                         </Link>
                         <Link
-                            to="mailto:support@atheria.com"
+                            to="mailto:support@initum.fr"
                             className="text-sm font-semibold text-gray-900"
                         >
                             Contacter le support{' '}
